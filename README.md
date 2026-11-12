@@ -12,12 +12,28 @@ This project was developed for Lab 4b of BIC 21203 Web Development. It demonstra
 
 ## Project Structure
 
+```text
 Lab4b_JSON_jQuery/
 │
 ├── books.json
 ├── books.html
 ├── jquery-dom.html
-└── README.md
+├── README.md
+│
+└── screenshots/
+    ├── Q1/
+    │   ├── q1-json (1).png
+    │   └── q1-json-output (2).png
+    │
+    ├── Q2/
+    │   ├── q2-books (1–5).png
+    │   └── q2-books-output (6–7).png
+    │
+    └── Q3/
+        ├── q3-jquery (1–4).png
+        ├── q3-jquery-output (5–6).png
+        └── q3-button-alert (7).png
+```
 
 ## Question 1 – JSON Data
 
@@ -35,6 +51,7 @@ The JSON data was validated to ensure that it follows the correct JSON syntax.
 The `books.html` file uses the JavaScript Fetch API to retrieve information from `books.json`.
 
 The webpage displays:
+
 - The title of the first book.
 - The author of the second book.
 - The genres of both books, grouped by their titles.
@@ -50,6 +67,24 @@ The `jquery-dom.html` file demonstrates three jQuery operations:
 3. `.on("click", ...)` – Displays an alert when the button is clicked.
 
 The project uses jQuery 4.0.0 through the official CDN.
+
+## Screenshots
+
+### Question 1 – JSON Data
+
+![JSON Data](screenshots/Q1/q1-json-output%20(2).png)
+
+### Question 2 – Fetch API
+
+![Books Output](screenshots/Q2/q2-books-output%20(6).png)
+
+### Question 3 – jQuery DOM Manipulation
+
+![jQuery Output](screenshots/Q3/q3-jquery-output%20(5).png)
+
+### Button Click Event
+
+![Button Alert](screenshots/Q3/q3-button-alert%20(7).png)
 
 ## How to Run the Project
 
