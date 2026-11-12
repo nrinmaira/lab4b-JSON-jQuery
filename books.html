@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Collection</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f6f9;
+        }
+
+        h1 {
+            color: #23456b;
+        }
+
+        .book {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        #result {
+            color: #23456b;
+        }
+
+        #error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>My Book Collection</h1>
+
+    <div id="result"></div>
+    <p id="error"></p>
+
+    <script>
+        async function loadBooks() {
+
+            try {
+
+                // Fetch data from books.json
+                const response = await fetch("books.json");
+
+                // Check whether the request was successful
+                if (!response.ok) {
+                    throw new Error("Failed to load books.json");
+                }
+
+                // Convert JSON data into JavaScript object
+                const data = await response.json();
+
+                // Get the books array
+                const books = data.books;
+
+                // Select the result container
+                const result = document.getElementById("result");
+
+                // Display first book title
+                const firstTitle = document.createElement("h2");
+                firstTitle.textContent =
+                    "First Book Title: " + books[0].title;
+
+                result.appendChild(firstTitle);
+
+                // Display second book author
+                const secondAuthor = document.createElement("h2");
+                secondAuthor.textContent =
+                    "Second Book Author: " + books[1].author;
+
+                result.appendChild(secondAuthor);
+
+                // Display genres grouped by book title
+                books.forEach(function(book) {
+
+                    const bookDiv = document.createElement("div");
+                    bookDiv.className = "book";
+
+                    const title = document.createElement("h3");
+                    title.textContent = book.title;
+
+                    const genres = document.createElement("p");
+                    genres.textContent =
+                        "Genres: " + book.genres.join(", ");
+
+                    bookDiv.appendChild(title);
+                    bookDiv.appendChild(genres);
+
+                    result.appendChild(bookDiv);
+
+                });
+
+            } catch (error) {
+
+                document.getElementById("error").textContent =
+                    "Error: Unable to load book data. Please try again.";
+
+                console.error(error);
+
+            }
+        }
+
+        // Call the function
+        loadBooks();
+
+    </script>
+
+</body>
+</html>

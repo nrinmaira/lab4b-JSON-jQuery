@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery DOM Manipulation</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f6f9;
+        }
+
+        h1 {
+            color: #23456b;
+        }
+
+        #myElement {
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        #myDIV {
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        #myDIV.myStyle {
+            background-color: coral;
+            padding: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+
+    <!-- Include jQuery 4.0.0 full build -->
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+
+</head>
+
+<body>
+
+    <h1>jQuery DOM Manipulation</h1>
+
+    <!-- Element 1 -->
+    <div id="myElement">Original Text</div>
+
+    <!-- Element 2 -->
+    <div id="myDIV">
+        <p>I am a myDIV.</p>
+    </div>
+
+    <!-- Button -->
+    <button id="myButton">Click me</button>
+
+    <script>
+
+        // (a) Change text using jQuery
+        $("#myElement").text("Modified Text");
+
+
+        // (b) Add CSS class using jQuery
+        $("#myDIV").addClass("myStyle");
+
+
+        // (c) Handle button click using jQuery
+        $("#myButton").on("click", function() {
+            alert("Button clicked!");
+        });
+
+    </script>
+
+</body>
+</html>
