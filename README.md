@@ -15,11 +15,8 @@ This project was developed for Lab 4b of BIC 21203 Web Development. It demonstra
 Lab4b_JSON_jQuery/
 │
 ├── books.json
-│
 ├── books.html
-│
 ├── jquery-dom.html
-│
 └── README.md
 
 ## Question 1 – JSON Data
